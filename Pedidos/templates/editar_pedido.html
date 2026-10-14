@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editar Pedido</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="titulo-formulario">
+            <h2>Editar Pedido</h2>
+            <p>Altere os dados do pedido cadastrado</p>
+        </div>
+
+        <form method="POST" class="formulario">
+
+            <label for="nome">Nome do Cliente</label>
+            <input
+                type="text"
+                id="nome"
+                name="nome"
+                value="{{ pedido[1] or '' }}"
+                required
+            >
+
+            <label for="gravacao">Gravação</label>
+            <input
+                type="text"
+                id="gravacao"
+                name="gravacao"
+                value="{{ pedido[2] or '' }}"
+            >
+
+            <label for="numero">Número da Placa</label>
+            <input
+                type="text"
+                id="numero"
+                name="numero"
+                value="{{ pedido[3] or '' }}"
+            >
+
+            <label for="cor">Cor</label>
+            <input
+                type="text"
+                id="cor"
+                name="cor"
+                value="{{ pedido[4] or '' }}"
+            >
+
+            <label for="tamanho">Tamanho</label>
+            <input
+                type="text"
+                id="tamanho"
+                name="tamanho"
+                value="{{ pedido[5] or '' }}"
+            >
+
+            <label for="observacoes">Observações</label>
+            <textarea
+                id="observacoes"
+                name="observacoes"
+            >{{ pedido[6] or '' }}</textarea>
+
+            <div class="area-botoes">
+
+                <a href="/" class="btn-voltar">
+                    Voltar
+                </a>
+
+                <button type="submit" class="btn-salvar">
+                    Atualizar Pedido
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
